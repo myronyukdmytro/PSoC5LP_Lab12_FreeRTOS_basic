@@ -21,8 +21,6 @@
 static void vLedTask(void *pvParameters);
 static void prvFatalError(void);
 
-/* UART access is owned by the UART task in this demo. */
-
 int main(void)
 {
     BaseType_t result;
@@ -30,8 +28,6 @@ int main(void)
 
     /* Install FreeRTOS exception handlers. */
     FreeRTOS_Init();
-    /* Initialize PSoC peripherals. */
-    UART_Start();
     /* LED starts OFF (active-low onboard LED). */
     Pin_LED_Write(1u);
     /* Create LED task. */
